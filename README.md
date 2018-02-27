@@ -14,7 +14,7 @@ We need a few dependencies first:
 
 ```pip install pytoml```
 
-```pip install pahoo_mqtt```
+```pip install paho_mqtt```
 
 Now, I perfectly know that *libatlas-base-dev* might be in conflict with Snips. That is why I do install it **before** Snips!
 
