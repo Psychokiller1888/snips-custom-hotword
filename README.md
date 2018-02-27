@@ -11,7 +11,9 @@ We need a few dependencies first:
 ```sudo apt-get install python-pip python-pyaudio python3-pyaudio sox libatlas-base-dev```
 
 ```pip install pyaudio```
+
 ```pip install pytoml```
+
 ```pip install pahoo_mqtt```
 
 Now, I perfectly know that *libatlas-base-dev* might be in conflict with Snips. That is why I do install it **before** Snips!
