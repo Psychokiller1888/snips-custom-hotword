@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# By Psychokiller1888
 
 import json
 import os.path
