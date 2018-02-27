@@ -2,7 +2,7 @@
 Using Snowboy to customize the snips hotword. This is meant to use the Snowboy engine to trigger Snips, unlike [oziee](https://github.com/oziee/hotword) that processes a sound buffer from Snips to check if the hotword is present. The main reason of this repository is to share another approach, all the needed files and a configurable way
 
 
-# Install
+### Install
 
 I'm using raspbian stretch light
 
@@ -25,7 +25,7 @@ Once you sorted that out, you can download this project
 ```git clone https://github.com/Psychokiller1888/snips-custom-hotword.git```
 
 
-# Creating a custom hotword
+### Creating a custom hotword
 
 * Head to [Snowboy](https://snowboy.kitt.ai/dashboard), create an account if you don't yet own one and login.
 * Create or download a hotword of your choice
@@ -42,7 +42,7 @@ Whaaat? Ok, calm down, here's an exemple:
 Given that you downloaded the model Alice.pmdl and you want a sensitivity of 0.45 for it. (Sensitivity from 0 - not hearing you and 1 - full blast)
 
 
-# Disabling Snips hotword
+### Disabling Snips hotword
 
 By this line of this little guide, your Snips instance still listens to both your custom hotword and your Snips hotword. Wanna disable the Snips hotword?
 
@@ -51,7 +51,7 @@ By this line of this little guide, your Snips instance still listens to both you
 ```sudo systemctl disable snips-hotword```
 
 
-# Starting the custom hotword at Raspberry boot
+### Starting the custom hotword at Raspberry boot
 
 * Edit the *snipsCustomHotword.service* file
 * Change the model name and the sensitivity on line 7
@@ -61,24 +61,17 @@ By this line of this little guide, your Snips instance still listens to both you
 * Enable it on boot ```sudo systemctl enable snipsCustomHotword```
 
 
-# But but but.... Nothing happens!
+### But but but.... Nothing happens!
 
 Ok, the aim of this is to change your hotword by a custom one, I didn't include any script... What you could do is start "customHotword" via ssh, and also start "snips-watch -v" and talk to your raspberry. When the custom hotword is heard, I simply publish on the mqtt server and Snips catches it!
 
 
-# Proof
+### Proof
 Yes, it works!
 [Screen capture](https://puu.sh/zwS0X.png)
 
 
-# Special thanks
-* Snips: https://snips.ai
-* The base: https://github.com/oziee/hotword
-* Snowboy: http://docs.kitt.ai/snowboy/
-* Systemd services: https://www.raspberrypi.org/documentation/linux/usage/systemd.md
-
-
-# Todo
+### Todo
 
 I'm open to any suggestions. Here a little TODO list for this simple project:
 * Hook Piwho, but not force it, passed as an argument
@@ -87,7 +80,7 @@ I'm open to any suggestions. Here a little TODO list for this simple project:
 
 
 
-# I wanna go back!!!
+### I wanna go back!!!
 ```sudo systemctl stop snipsCustomHotword```
 
 ```sudo systemctl disable snipsCustomHotword```
@@ -99,3 +92,10 @@ I'm open to any suggestions. Here a little TODO list for this simple project:
 ```sudo rm /etc/systemd/system/snipsCustomHotword.service```
 
 ```sudo rm -rf /home/pi/snips-custom-hotword```
+
+
+## Special thanks
+* Snips: https://snips.ai
+* The base: https://github.com/oziee/hotword
+* Snowboy: http://docs.kitt.ai/snowboy/
+* Systemd services: https://www.raspberrypi.org/documentation/linux/usage/systemd.md
