@@ -6,8 +6,6 @@ __pycache__/
 
 # models
 personal_*
-# C extensions
-*.so
 
 # Distribution / packaging
 .Python
