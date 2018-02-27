@@ -1,5 +1,5 @@
 # snips-custom-hotword
-Using Snowboy to customize the snips hotword
+Using Snowboy to customize the snips hotword. This is meant to use the Snowboy engine to trigger Snips, unlike [oziee](https://github.com/oziee/hotword) that processes a sound buffer from Snips to check if the hotword is present. The main reason of this repository is to share another approach, all the needed files and a configurable way
 
 
 # Install
@@ -17,6 +17,8 @@ We need a few dependencies first:
 ```pip install pahoo_mqtt```
 
 Now, I perfectly know that *libatlas-base-dev* might be in conflict with Snips. That is why I do install it **before** Snips!
+
+[Install Snips](https://github.com/snipsco/snips-platform-documentation/wiki/1.-Setup-the-Snips-Voice-Platform)
 
 Once you sorted that out, you can download this project
 
