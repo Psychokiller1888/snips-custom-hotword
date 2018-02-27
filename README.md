@@ -41,6 +41,7 @@ Whaaat? Ok, calm down, here's an exemple:
 
 Given that you downloaded the model Alice.pmdl and you want a sensitivity of 0.45 for it. (Sensitivity from 0 - not hearing you and 1 - full blast)
 
+
 # Disabling Snips hotword
 
 By this line of this little guide, your Snips instance still listens to both your custom hotword and your Snips hotword. Wanna disable the Snips hotword?
@@ -48,6 +49,16 @@ By this line of this little guide, your Snips instance still listens to both you
 ```sudo systemctl stop snips-hotword```
 
 ```sudo systemctl disable snips-hotword```
+
+
+# Starting the custom hotword at Raspberry boot
+
+* Edit the *snipsCustomHotword.service* file
+* Change the model name and the sensitivity on line 7
+* In case you downloaded the script at a different place, make sure the line 8 points correctly to where customHotword.py is located
+* Move the file to *systemd* ```sudo mv /home/pi/snips-custom-hotword/snipsCustomHotword.service /etc/systemd/system/```
+* Start the service ```sudo systemctl start snipsCustomHotword```
+* Enable it on boot ```sudo systemctl enable snipsCustomHotword```
 
 
 # But but but.... Nothing happens!
@@ -64,10 +75,27 @@ Yes, it works!
 * Snips: https://snips.ai
 * The base: https://github.com/oziee/hotword
 * Snowboy: http://docs.kitt.ai/snowboy/
+* Systemd services: https://www.raspberrypi.org/documentation/linux/usage/systemd.md
 
 
 # Todo
 
 I'm open to any suggestions. Here a little TODO list for this simple project:
 * Hook Piwho, but not force it, passed as an argument
-* Auto start this script at pi boot
+
+
+
+
+
+# I wanna go back!!!
+```sudo systemctl stop snipsCustomHotword```
+
+```sudo systemctl disable snipsCustomHotword```
+
+```sudo systemctl start snips-hotword```
+
+```sudo systemctl enable snips-hotword```
+
+```sudo rm /etc/systemd/system/snipsCustomHotword.service```
+
+```sudo rm -rf /home/pi/snips-custom-hotword```
