@@ -1,0 +1,17 @@
+[Unit]
+Description=Snips Custom Hotword
+Wants=network-online.target
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python customHotword.py Alice 0.4
+WorkingDirectory=/home/pi/snips-custom-hotword
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+RestartSec=5
+
+StandardOutput=console
+
+[Install]
+WantedBy=multi-user.target
