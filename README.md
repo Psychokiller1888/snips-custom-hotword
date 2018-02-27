@@ -51,6 +51,11 @@ By this line of this little guide, your Snips instance still listens to both you
 Ok, the aim of this is to change your hotword by a custom one, I didn't include any script... What you could do is start "customHotword" via ssh, and also start "snips-watch -v" and talk to your raspberry. When the custom hotword is heard, I simply publish on the mqtt server and Snips catches it!
 
 
+# Proof
+Yes, it works!
+[Screen capture](https://puu.sh/zwS0X.png)
+
+
 # Special thanks
 * Snips: https://snips.ai
 * The base: https://github.com/oziee/hotword
@@ -61,3 +66,4 @@ Ok, the aim of this is to change your hotword by a custom one, I didn't include 
 
 I'm open to any suggestions. Here a little TODO list for this simple project:
 * Hook Piwho, but not force it, passed as an argument
+* Auto start this script at pi boot
