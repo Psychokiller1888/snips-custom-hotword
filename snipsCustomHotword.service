@@ -11,7 +11,5 @@ StandardError=inherit
 Restart=always
 RestartSec=5
 
-StandardOutput=console
-
 [Install]
 WantedBy=multi-user.target
