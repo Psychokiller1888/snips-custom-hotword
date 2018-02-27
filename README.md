@@ -20,7 +20,7 @@ Now, I perfectly know that *libatlas-base-dev* might be in conflict with Snips. 
 
 Once you sorted that out, you can download this project
 
-```git https://github.com/Psychokiller1888/snips-custom-hotword.git```
+```git clone https://github.com/Psychokiller1888/snips-custom-hotword.git```
 
 
 # Creating a custom hotword
