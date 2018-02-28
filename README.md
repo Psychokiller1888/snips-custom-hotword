@@ -63,12 +63,13 @@ By this line of this little guide, your Snips instance still listens to both you
 
 ### But but but.... Nothing happens!
 
-Ok, the aim of this is to change your hotword by a custom one, I didn't include any script... What you could do is start "customHotword" via ssh, and also start "snips-watch -v" and talk to your raspberry. When the custom hotword is heard, I simply publish on the mqtt server and Snips catches it!
+Ok, the aim of this is to change your hotword by a custom one, I didn't include any script... If you want to check that it actually works, make sure to have the service started, you could use ```sudo systemctl status snipsCustomHotword``` to make sure, then use ```snips-watch -v``` and try to wake your assistant by telling your hotword. If it hears you, you'll get informations on screen
 
 
 ### Proof
 Yes, it works!
 [Screen capture](https://puu.sh/zwS0X.png)
+[Video](https://www.youtube.com/watch?v=SqWoNj4HUos)
 
 
 ### Todo
