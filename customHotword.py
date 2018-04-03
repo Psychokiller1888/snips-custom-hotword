@@ -12,19 +12,17 @@ import snowboydecoder
 import sys
 
 SNIPS_CONFIG_PATH = '/etc/snips.toml'
-HOTWORD_ID = 'default'
 
 interrupted = False
 siteId = 'default'
 mqttServer = '127.0.0.1'
 mqttPort = 1883
 model = ''
-sensitivity = 0.5
-
-mqtt_client = mqtt.Client()
+sensitivity = 0.4
+hotwordId = 'default'
 
 def loadConfigs():
-	global mqttServer, mqttPort, siteId
+	global mqttServer, mqttPort, siteId, hotwordId
 
 	if os.path.isfile(SNIPS_CONFIG_PATH):
 		with open(SNIPS_CONFIG_PATH) as confFile:
@@ -41,6 +39,8 @@ def loadConfigs():
 					siteId = configs['snips-audio-server']['bind'].split(':')[0]
 				elif '@' in configs['snips-audio-server']['bind']:
 					siteId = configs['snips-audio-server']['bind'].split('@')[0]
+			if 'hotword_id' in configs['snips-hotword']:
+				hotwordId = configs['snips-hotword']['hotword_id']
 	else:
 		print('Snips configs not found')
 
@@ -54,7 +54,7 @@ def interrupt_callback():
 
 def onHotword():
 	global mqttServer, mqttPort, siteId
-	publish.single('hermes/hotword/{0}/detected'.format(HOTWORD_ID), payload=json.dumps({'siteId': siteId}), hostname=mqttServer, port=1883)
+	publish.single('hermes/hotword/{0}/detected'.format(hotwordId), payload=json.dumps({'siteId': siteId}), hostname=mqttServer, port=1883)
 
 signal.signal(signal.SIGINT, signal_handler)
 
