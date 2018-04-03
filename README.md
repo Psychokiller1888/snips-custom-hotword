@@ -32,7 +32,7 @@ In a console type
 
 Check that the part "capture" is set as type "dsnoop"
 
-Here an exempleof a working configuration, so the mic can be shared between applications:
+Here an exemple of a working configuration, so the mic can be shared between applications:
 
 ```
 pcm.!default {
@@ -131,4 +131,4 @@ I'm open to any suggestions. Here a little TODO list for this simple project:
 * The base: https://github.com/oziee/hotword
 * Snowboy: http://docs.kitt.ai/snowboy/
 * Systemd services: https://www.raspberrypi.org/documentation/linux/usage/systemd.md
-* @Algram as well as @mathieu from @Snips for trying as a cobaye to fix dsnoop and snowboy install after Snips
+* [@Algram](https://github.com/Algram) as well as @mathieu from @Snips for trying as a cobaye to fix dsnoop and snowboy install after Snips
