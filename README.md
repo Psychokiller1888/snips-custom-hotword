@@ -34,7 +34,8 @@ Check that the part "capture" is set as type "dsnoop"
 
 Here an exempleof a working configuration, so the mic can be shared between applications:
 
-```pcm.!default {
+```
+pcm.!default {
     type asym
     playback.pcm {
         type plug
@@ -52,7 +53,8 @@ pcm.multiapps {
     type dsnoop
     slave.pcm "hw:1,0"
     ipc_key 666666
-}```
+}
+```
 
 ### Creating a custom hotword
 
