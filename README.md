@@ -25,6 +25,35 @@ Once you sorted that out, you can download this project
 ```git clone https://github.com/Psychokiller1888/snips-custom-hotword.git```
 
 
+### Checking your mic ###
+
+In a console type
+```sudo nano /etc/aound.conf```
+
+Check that the part "capture" is set as type "dsnoop"
+
+Here an exempleof a working configuration, so the mic can be shared between applications:
+
+```pcm.!default {
+    type asym
+    playback.pcm {
+        type plug
+        slave.pcm "hw:0,0"
+    }
+    capture.pcm "multi"
+}
+
+pcm.multi {
+    type plug
+    slave.pcm "multiapps"
+}
+
+pcm.multiapps {
+    type dsnoop
+    slave.pcm "hw:1,0"
+    ipc_key 666666
+}```
+
 ### Creating a custom hotword
 
 * Head to [Snowboy](https://snowboy.kitt.ai/dashboard), create an account if you don't yet own one and login.
@@ -100,3 +129,4 @@ I'm open to any suggestions. Here a little TODO list for this simple project:
 * The base: https://github.com/oziee/hotword
 * Snowboy: http://docs.kitt.ai/snowboy/
 * Systemd services: https://www.raspberrypi.org/documentation/linux/usage/systemd.md
+* @Algram as well as @mathieu from @Snips for trying as a cobaye to fix dsnoop and snowboy install after Snips
