@@ -54,7 +54,7 @@ def interrupt_callback():
 
 def onHotword():
 	global mqttServer, mqttPort, siteId
-	publish.single('hermes/hotword/{0}/detected'.format(hotwordId), payload=json.dumps({'siteId': siteId}), hostname=mqttServer, port=1883)
+	publish.single('hermes/hotword/{0}/detected'.format(hotwordId), payload=json.dumps({'siteId': siteId, 'modelId': 'default'}), hostname=mqttServer, port=1883)
 
 signal.signal(signal.SIGINT, signal_handler)
 
