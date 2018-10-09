@@ -28,7 +28,7 @@ Once you sorted that out, you can download this project
 ### Checking your mic ###
 
 In a console type
-```sudo nano /etc/aound.conf```
+```sudo nano /etc/asound.conf```
 
 Check that the part "capture" is set as type "dsnoop"
 
